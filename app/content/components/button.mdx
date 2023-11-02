@@ -2,15 +2,54 @@
 meta:
   - title: Button
   - name: description
-    content: Button component description
+    content: Trigger an action or event, such as submitting a form or displaying a dialog.
 ---
 
 # Button
 
-Button is a nice component super cool
+Trigger an action or event, such as submitting a form or displaying a dialog.
 
-<Button>Click me</Button>
+<ButtonDemo.Default />
+```jsx
+<Button>
+  <Bookmark size={16} />
+  Bookmark
+</Button>
+```
 
-```jsx /<Button>/
-<Button>Click me</Button>
+## API Reference
+
+### Button
+
+`variant`
+
+<p className="mt-4 font-mono text-sm">"solid" | "outline" | "unset"</p>
+<p className="my-6">The variant of the button.</p>
+
+---
+
+## Examples
+
+### Variant
+
+Use the `variant` property to change the button style.
+
+<ButtonDemo.Variants />
+```jsx
+<div className="flex gap-4">
+  <Button variant="solid">Edit profile</Button>
+  <Button variant="outline">Edit profile</Button>
+</div>
+```
+
+### Customizing
+
+Use the `unset` variant to remove the default styles and customize the button.
+
+<ButtonDemo.Customizing />
+```jsx
+<Button variant="unset" className="rounded-none bg-black text-white">
+  <ShoppingCart size={16} />
+  Add to cart
+</Button>
 ```
