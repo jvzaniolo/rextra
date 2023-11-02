@@ -1,28 +1,34 @@
-# templates/unstable-vite
+# Rextra - A docs template for Remix
 
-⚠️ Remix support for Vite is unstable and not recommended for production.
+The idea of this project is to build something similar to Nextra for Remix.
 
-📖 See the [Remix Vite docs][remix-vite-docs] for details on supported features.
+This is a work in progress and has no expected date for release.
 
-## Setup
+## Features
 
-```shellscript
-npx create-remix@latest --template remix-run/remix/templates/unstable-vite
-```
+- [ ] Pretty and accessible user interface out of the box
+- [ ] Dark mode support
+- [ ] i18n
+- [ ] Search through documentation with something like Algolia
+- [ ] Render content in Markdown (.md, .mdx)
+- [ ] Built-in components like Callout, Tabs, and more
+- [ ] Code blocks with syntax highlighting
+- [ ] Others?
 
-## Run
+## Installation
 
-Spin up the Vite dev server:
+I don't know yet how you will use this project
 
-```shellscript
-npm run dev
-```
+My options are:
 
-Or build your app for production and run it:
+- Create a Remix Stack
+- Publish a package to npm
+- A Vite plugin? 🤔
 
-```shellscript
-npm run build
-npm run start
-```
+## Usage
 
-[remix-vite-docs]: https://remix.run/docs/en/main/future/vite
+Once the project is done I'll create a documentation site using this template to document how to use this.
+
+## Acknowledgments
+
+- [Nextra](https://github.com/shuding/nextra)
