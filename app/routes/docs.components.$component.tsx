@@ -1,8 +1,8 @@
 import { json, type DataFunctionArgs, type MetaFunction } from '@remix-run/node'
 import { Link, useLoaderData } from '@remix-run/react'
-import { getMDXComponent } from 'mdx-bundler/client'
+import { getMDXComponent } from 'mdx-bundler/client/index.js'
 import { useMemo } from 'react'
-import { ButtonDemo } from '~/content/components/button.demo'
+import { ButtonDemo } from '~/components/demos/button.demo'
 import { mdxComponents } from '~/mdx-components'
 import { bundleMDXContent } from '~/utils/bundle-mdx-content.server'
 import { getMDXContent } from '~/utils/get-mdx-content.server'
@@ -31,7 +31,7 @@ export default function ComponentsPage() {
   const { code } = useLoaderData<typeof loader>()
   const Component = useMemo(() => getMDXComponent(code), [code])
   return (
-    <div>
+    <main>
       <Component components={components} />
       <footer className="mt-12 border-t border-neutral-200 py-10 text-end">
         <Link
@@ -43,6 +43,6 @@ export default function ComponentsPage() {
           Edit this page on GitHub
         </Link>
       </footer>
-    </div>
+    </main>
   )
 }

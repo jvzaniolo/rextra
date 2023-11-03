@@ -11,7 +11,12 @@ export async function bundleMDXContent(content: string) {
       options.rehypePlugins = [
         ...(options.rehypePlugins ?? []),
         rehypeSlug,
-        [rehypeAutolinkHeadings, { behavior: 'wrap' }],
+        [
+          rehypeAutolinkHeadings,
+          {
+            behavior: 'wrap',
+          },
+        ],
         [
           rehypeShiki,
           {

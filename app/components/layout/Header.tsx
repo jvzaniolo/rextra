@@ -1,15 +1,19 @@
 import { Link } from '@remix-run/react'
+import { cx } from '~/utils/misc'
 
-export function Header() {
-	return (
-		<header className="fixed top-0 w-full border-b border-neutral-200 bg-white">
-			<div className="flex h-12 items-center justify-between px-4">
-				<Link to="/">Rextra</Link>
+export function Header({ className }: { className?: string }) {
+  return (
+    <header
+      className={cx(
+        'z-10 flex items-center justify-between border-b border-neutral-200 bg-white px-4',
+        className,
+      )}
+    >
+      <Link to="/">Rextra</Link>
 
-				<nav className="space-x-4">
-					<Link to="/docs">Docs</Link>
-				</nav>
-			</div>
-		</header>
-	)
+      <nav className="space-x-4">
+        <Link to="/docs">Docs</Link>
+      </nav>
+    </header>
+  )
 }
