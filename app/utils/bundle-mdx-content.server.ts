@@ -5,25 +5,26 @@ import rehypeShiki from 'rehype-shiki'
 import rehypeSlug from 'rehype-slug'
 
 export async function bundleMDXContent(content: string) {
-	const result = await bundleMDX({
-		source: content,
-		mdxOptions(options) {
-			options.rehypePlugins = [
-				...(options.rehypePlugins ?? []),
-				rehypeSlug,
-				rehypeAutolinkHeadings,
-				[
-					rehypeShiki,
-					{
-						theme: 'min-light',
-						useBackground: false,
-					},
-				],
-			]
+  const result = await bundleMDX({
+    source: content,
+    mdxOptions(options) {
+      options.rehypePlugins = [
+        ...(options.rehypePlugins ?? []),
+        rehypeSlug,
+        [rehypeAutolinkHeadings, { behavior: 'wrap' }],
+        [
+          rehypeShiki,
+          {
+            theme: 'min-light',
+            // theme: 'min-dark',
+            useBackground: false,
+          },
+        ],
+      ]
 
-			return options
-		},
-	})
+      return options
+    },
+  })
 
-	return result
+  return result
 }
