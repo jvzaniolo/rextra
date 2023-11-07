@@ -10,7 +10,7 @@ import {
 } from '@remix-run/react'
 import { Header } from './components/layout/Header'
 import { Sidebar } from './components/layout/Sidebar'
-import stylesheetHref from './index.css'
+import stylesheetHref from './styles/index.css'
 
 export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: stylesheetHref },
@@ -27,10 +27,10 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Header className="sticky top-0 h-12 bg-white" />
+        <Header className="sticky top-0 h-12" />
         <div className="flex h-full">
           <Sidebar className="sticky top-12 min-h-[calc(100vh-theme(spacing.12))] w-60 shrink-0 self-start" />
-          <article className="min-h-[calc(100vh-theme(spacing.12))] flex-1 px-10">
+          <article className="min-h-[calc(100vh-theme(spacing.12))] max-w-4xl flex-1 px-20">
             <Outlet />
           </article>
         </div>

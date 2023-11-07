@@ -1,7 +1,7 @@
+import remarkHeadings from '@vcarl/remark-headings'
 import { bundleMDX } from 'mdx-bundler'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
-// @ts-expect-error - shiki is not typed
-import rehypeShiki from 'rehype-shiki'
+import rehypePrettyCode from 'rehype-pretty-code'
 import rehypeSlug from 'rehype-slug'
 
 export async function bundleMDXContent(content: string) {
@@ -17,15 +17,14 @@ export async function bundleMDXContent(content: string) {
             behavior: 'wrap',
           },
         ],
-        [
-          rehypeShiki,
-          {
-            theme: 'min-light',
-            // theme: 'min-dark',
-            useBackground: false,
-          },
-        ],
+        () =>
+          rehypePrettyCode({
+            theme: { light: 'min-light', dark: 'material-theme' },
+            keepBackground: false,
+          }),
       ]
+
+      options.remarkPlugins = [...(options.remarkPlugins ?? []), remarkHeadings]
 
       return options
     },

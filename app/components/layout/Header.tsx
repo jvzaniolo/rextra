@@ -5,7 +5,7 @@ export function Header({ className }: { className?: string }) {
   return (
     <header
       className={cx(
-        'z-10 flex items-center justify-between border-b border-neutral-200 bg-white px-4',
+        'border-border bg-background z-10 flex items-center justify-between border-b px-4',
         className,
       )}
     >

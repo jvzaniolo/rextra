@@ -33,10 +33,10 @@ export default function ComponentsPage() {
   return (
     <main>
       <Component components={components} />
-      <footer className="mt-12 border-t border-neutral-200 py-10 text-end">
+      <footer className="mt-12 border-t border-border py-10 text-end">
         <Link
           to="https://github.com/jvzaniolo/rextra/app/content/components/button.mdx"
-          className="text-sm font-light text-neutral-600 underline-offset-4 hover:underline hover:[text-decoration-color:_theme(colors.neutral.400)] hover:[text-decoration-width:_1px]"
+          className="text-sm font-light text-neutral-600 underline-offset-4 hover:underline hover:[text-decoration-color:_theme(colors.neutral.400)] hover:[text-decoration-width:_1px] dark:text-neutral-400 dark:hover:[text-decoration-color:_theme(colors.neutral.600)]"
           target="_blank"
           rel="noopener noreferrer"
         >

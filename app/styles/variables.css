@@ -1,0 +1,11 @@
+:root {
+  --border: theme(colors.neutral.200);
+  --background: theme(colors.white);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --border: theme(colors.neutral.800);
+    --background: #121212;
+  }
+}
